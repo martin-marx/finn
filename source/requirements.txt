@@ -1,0 +1,5 @@
+sqlalchemy==1.4.50
+fastapi==0.104.1
+uvicorn==0.24.0.post1
+faker==20.1.0
+pydantic_sqlalchemy==0.0.9

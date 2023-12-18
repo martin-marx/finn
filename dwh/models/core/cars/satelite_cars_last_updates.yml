@@ -1,0 +1,4 @@
+version: 2
+
+models:
+  - name: satelite_cars_last_updates

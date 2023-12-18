@@ -1,0 +1,4 @@
+version: 2
+
+models:
+  - name: cars_deliveries_historical

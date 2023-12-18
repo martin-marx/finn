@@ -1,0 +1,4 @@
+version: 2
+
+models:
+  - name: satelite_customers_b2c_last_updates

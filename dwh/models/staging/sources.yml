@@ -1,0 +1,111 @@
+version: 2
+
+sources:
+
+  - name: auto_sources
+    description: "Initial layer of data"
+    schema: "main"
+
+    tables:
+
+      - name: subscriptions
+#        freshness:
+#          warn_after:
+#            count: 1
+#            period: day
+#          error_after:
+#            count: 2
+#            period: days
+#          filter: DATE_DIFF(CURRENT_TIMESTAMP(), TIMESTAMP_MILLIS(processing_date), DAY) < 1
+#        loaded_at_field: "TIMESTAMP_MILLIS(created_at)"
+        columns:
+          - name: id
+            data_type: STRING
+            description: "Subscription Id"
+          - name: customer_id
+            data_type: STRING
+            description: "Subscriber Id"
+          - name: car_id
+            data_type: STRING
+            description: ""
+          - name: created_at
+            data_type: DATETIME
+            description: ""
+          - name: start_date
+            data_type: DATETIME
+            description: ""
+          - name: term_month
+            data_type: STRING
+            description: ""
+          - name: term_month
+            data_type: STRING
+            description: ""
+          - name: monthly_rate
+            data_type: FLOAT
+            description: ""
+          - name: processing_date
+            data_type: DATE
+            description: ""
+
+      - name: cars
+        columns:
+          - name: id
+            data_type: STRING
+            description: "Car Id"
+          - name: vin
+            data_type: STRING
+            description: ""
+          - name: brand
+            data_type: STRING
+            description: ""
+          - name: model
+            data_type: STRING
+            description: ""
+          - name: engine_type
+            data_type: STRING
+            description: ""
+          - name: license_plate
+            data_type: STRING
+            description: ""
+          - name: registration_date
+            data_type: DATETIME
+            description: ""
+          - name: deregistration_date
+            data_type: DATETIME
+            description: ""
+          - name: processing_date
+            data_type: DATE
+            description: ""
+
+      - name: customers
+        columns:
+          - name: id
+            data_type: STRING
+            description: "Subscription Id"
+          - name: first_name
+            data_type: STRING
+            description: ""
+          - name: second_name
+            data_type: STRING
+            description: ""
+          - name: type
+            data_type: STRING
+            description: ""
+          - name: company_name
+            data_type: STRING
+            description: ""
+          - name: address_city
+            data_type: STRING
+            description: ""
+          - name: address_zip
+            data_type: STRING
+            description: ""
+          - name: address_street
+            data_type: STRING
+            description: ""
+          - name: address_street_house
+            data_type: STRING
+            description: ""
+          - name: processing_date
+            data_type: DATE
+            description: ""

@@ -1,0 +1,4 @@
+version: 2
+
+models:
+  - name: infleeted_cars_volumes_historical

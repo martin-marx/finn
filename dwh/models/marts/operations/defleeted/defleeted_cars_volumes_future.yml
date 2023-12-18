@@ -1,0 +1,4 @@
+version: 2
+
+models:
+  - name: defleeted_cars_volumes_future

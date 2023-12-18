@@ -1,4 +1,4 @@
 requests==2.31.0
-sqlalchemy==2.0.16
-flask-sqlalchemy==3.1.1
+sqlalchemy==1.4.50
 pydantic_sqlalchemy==0.0.9
+dynaconf==3.2.3

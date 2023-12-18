@@ -1,0 +1,13 @@
+[default]
+url = "http://localhost:8000/"
+db_url = "sqlite:///./test.db"
+date_format = '%Y-%m-%dT%H:%M:%S.%f'
+
+[subscriptions]
+route = 'subscriptions'
+
+[customers]
+route = 'customers'
+
+[cars]
+route = 'cars'

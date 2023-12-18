@@ -19,8 +19,6 @@ def __fetch_date(url):
 
 
 def __convert_car(car):
-    date_format = '%Y-%m-%dT%H:%M:%S.%f'
-
     converted_car = Car(**car)
 
     if converted_car.registration_date is not None:
@@ -39,8 +37,6 @@ def __convert_customer(customer):
 
 
 def __convert_subscription(subscription):
-    date_format = '%Y-%m-%dT%H:%M:%S.%f'
-
     converted_subscription = Subscription(**subscription)
 
     if converted_subscription.created_at is not None:

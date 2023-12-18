@@ -23,7 +23,7 @@ SELECT
 FROM
   {{ source('auto_sources','customers') }}
 {% if is_incremental() %}
-  WHERE processing_date >= DATE('now','-1 day') AND UPPER(type) = 'B2C'
+  WHERE processing_date >= DATE('now','-1 day') AND type = 'b2c'
 {% else %}
-  WHERE UPPER(type) = 'B2C'
+  WHERE type = 'b2c'
 {% endif %}

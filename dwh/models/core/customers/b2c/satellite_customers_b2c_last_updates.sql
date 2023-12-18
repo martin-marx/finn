@@ -11,11 +11,12 @@ WITH ranked AS (
       ORDER BY updated_at DESC
     ) AS rw_number
   FROM
-    {{ ref('satelite_customers_b2b')}}
+    {{ ref('satellite_customers_b2c')}}
 )
 SELECT
   id,
-  company_name,
+  first_name,
+  second_name,
   city AS city,
   zip AS zip,
   street AS street,

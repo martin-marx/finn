@@ -1,5 +1,5 @@
 {{
-    config(unique_key='id')
+    config(unique_key='hash')
 }}
 
 SELECT

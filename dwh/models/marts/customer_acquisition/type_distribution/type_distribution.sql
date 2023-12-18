@@ -10,7 +10,7 @@ WITH customers_types AS (
     id,
     'B2C' AS tp
   FROM
-    {{ ref('satelite_customers_b2c_last_updates')}}
+    {{ ref('satellite_customers_b2c_last_updates')}}
 
   UNION ALL
 
@@ -18,7 +18,7 @@ WITH customers_types AS (
     id,
     'B2B' AS tp
   FROM
-    {{ ref('satelite_customers_b2b_last_updates')}}
+    {{ ref('satellite_customers_b2b_last_updates')}}
 )
 SELECT
   SUM(IIF(ct.tp = 'B2B', 1, 0)) AS B2B_distribution,

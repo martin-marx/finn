@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: satellite_customers_b2b
+    columns:
+      - name: id
+        data_type: STRING
+        description: "Customer Id"
+      - name: company_name
+        data_type: STRING
+        description: "Company name (B2B)"
+      - name: city
+        data_type: STRING
+        description: "Customer address"
+      - name: zip
+        data_type: STRING
+        description: "Customer zip"
+      - name: street
+        data_type: STRING
+        description: "Customer street"
+      - name: street_house
+        data_type: STRING
+        description: "Customer street house"
+      - name: hash
+        data_type: STRING
+        description: "Hash diff to validate uniqueness"
+        tests:
+          - unique
+      - name: updated_at
+        data_type: DATETIME
+        description: "Time when the satellite was updated"

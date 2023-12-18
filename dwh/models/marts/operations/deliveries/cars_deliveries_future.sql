@@ -9,7 +9,7 @@ SELECT
   scbc.city AS city,
   DATE(s.start_date) AS delivery_date
 FROM
-  {{ ref ('link_subscriptions') }} s INNER JOIN {{ ref ('satelite_customers_b2c_last_updates') }} scbc
+  {{ ref ('link_subscriptions') }} s INNER JOIN {{ ref ('satellite_customers_b2c_last_updates') }} scbc
   ON s.customer_id = scbc.id
 WHERE
   DATE(start_date) >= DATE('now')
@@ -23,7 +23,7 @@ SELECT
   scbb.city AS city,
   DATE(s.start_date) AS delivery_date
 FROM
-  {{ ref ('link_subscriptions') }} s INNER JOIN {{ ref ('satelite_customers_b2b_last_updates') }} scbb
+  {{ ref ('link_subscriptions') }} s INNER JOIN {{ ref ('satellite_customers_b2b_last_updates') }} scbb
   ON s.customer_id = scbb.id
 WHERE
   DATE(start_date) >= DATE('now')

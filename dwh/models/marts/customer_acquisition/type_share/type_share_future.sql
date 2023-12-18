@@ -16,7 +16,7 @@ customers_types AS (
     id,
     'B2C' AS tp
   FROM
-    {{ ref('satelite_customers_b2c_last_updates') }}
+    {{ ref('satellite_customers_b2c_last_updates') }}
 
   UNION ALL
 
@@ -24,7 +24,7 @@ customers_types AS (
     id,
     'B2B' AS tp
   FROM
-    {{ ref('satelite_customers_b2b_last_updates') }}
+    {{ ref('satellite_customers_b2b_last_updates') }}
 ),
 prepared_subscriptions AS (
   SELECT

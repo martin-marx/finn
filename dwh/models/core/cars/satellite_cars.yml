@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: satellite_cars
+    columns:
+      - name: id
+        data_type: STRING
+        description: "Car Id"
+      - name: license_plate
+        data_type: STRING
+        description: "Car license plate"
+      - name: registration_date
+        data_type: DATETIME
+        description: "Car registration time"
+      - name: deregistration_date
+        data_type: DATETIME
+        description: "Car registration time"
+      - name: processing_date
+        data_type: DATE
+        description: "Date when the data was processed"
+      - name: hash
+        data_type: STRING
+        description: "Hash diff to validate uniqueness"
+        tests:
+          - unique
+      - name: updated_at
+        data_type: DATETIME
+        description: "Time when the satellite was updated"

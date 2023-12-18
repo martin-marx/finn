@@ -8,7 +8,7 @@ SELECT
   COUNT(id) AS cnt,
   DATE(registration_date) AS day
 FROM
-  {{ ref ('satelite_cars_last_updates') }}
+  {{ ref ('satellite_cars_last_updates') }}
 WHERE
   DATE(registration_date) >= DATE('now')
 GROUP BY

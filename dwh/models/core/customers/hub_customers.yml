@@ -2,3 +2,9 @@ version: 2
 
 models:
   - name: hub_customers
+    columns:
+      - name: id
+        data_type: STRING
+        description: "Subscription Id"
+        tests:
+          - unique

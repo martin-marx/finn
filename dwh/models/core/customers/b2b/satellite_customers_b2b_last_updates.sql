@@ -11,13 +11,15 @@ WITH ranked AS (
       ORDER BY updated_at DESC
     ) AS rw_number
   FROM
-    {{ ref('satelite_cars') }}
+    {{ ref('satellite_customers_b2b')}}
 )
 SELECT
   id,
-  license_plate,
-  registration_date,
-  deregistration_date
+  company_name,
+  city AS city,
+  zip AS zip,
+  street AS street,
+  street_house AS street_house
 FROM
   ranked
 WHERE

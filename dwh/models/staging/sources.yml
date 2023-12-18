@@ -22,90 +22,102 @@ sources:
           - name: id
             data_type: STRING
             description: "Subscription Id"
+            tests:
+              - not_null
           - name: customer_id
             data_type: STRING
             description: "Subscriber Id"
           - name: car_id
             data_type: STRING
-            description: ""
+            description: "Car Id"
           - name: created_at
             data_type: DATETIME
-            description: ""
+            description: "Time when subscription was created"
           - name: start_date
             data_type: DATETIME
-            description: ""
+            description: "Time when subscription starts being active"
           - name: term_month
             data_type: STRING
-            description: ""
-          - name: term_month
-            data_type: STRING
-            description: ""
+            description: "Subscription type 6/12 months"
+            tests:
+              - accepted_values:
+                  values: ['six', 'twelve']
           - name: monthly_rate
             data_type: FLOAT
-            description: ""
+            description: "Payments per month"
           - name: processing_date
             data_type: DATE
-            description: ""
+            description: "Date when the data was processed"
 
       - name: cars
         columns:
           - name: id
             data_type: STRING
             description: "Car Id"
+            tests:
+              - not_null
           - name: vin
             data_type: STRING
-            description: ""
+            description: "VIN"
           - name: brand
             data_type: STRING
-            description: ""
+            description: "Car brand"
           - name: model
             data_type: STRING
-            description: ""
+            description: "Car model"
           - name: engine_type
             data_type: STRING
-            description: ""
+            description: "Car engine type"
+            tests:
+              - accepted_values:
+                  values: ['electric', 'hybrid', 'gasoline', 'diesel']
           - name: license_plate
             data_type: STRING
-            description: ""
+            description: "Car license plate"
           - name: registration_date
             data_type: DATETIME
-            description: ""
+            description: "Car registration time"
           - name: deregistration_date
             data_type: DATETIME
-            description: ""
+            description: "Car registration time"
           - name: processing_date
             data_type: DATE
-            description: ""
+            description: "Date when the data was processed"
 
       - name: customers
         columns:
           - name: id
             data_type: STRING
-            description: "Subscription Id"
+            description: "Customer Id"
+            tests:
+              - not_null
           - name: first_name
             data_type: STRING
-            description: ""
+            description: "Customer name (B2C)"
           - name: second_name
             data_type: STRING
-            description: ""
+            description: "Customer second name for (B2C)"
           - name: type
             data_type: STRING
-            description: ""
+            description: "Customer type B2B/B2C"
+            tests:
+              - accepted_values:
+                  values: ['b2c', 'b2b']
           - name: company_name
             data_type: STRING
-            description: ""
+            description: "Company name (B2B)"
           - name: address_city
             data_type: STRING
-            description: ""
+            description: "Customer address"
           - name: address_zip
             data_type: STRING
-            description: ""
+            description: "Customer zip"
           - name: address_street
             data_type: STRING
-            description: ""
+            description: "Customer street"
           - name: address_street_house
             data_type: STRING
-            description: ""
+            description: "Customer street house"
           - name: processing_date
             data_type: DATE
-            description: ""
+            description: "Date when the data was processed"

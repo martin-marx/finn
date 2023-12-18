@@ -2,3 +2,30 @@ version: 2
 
 models:
   - name: link_subscriptions
+    columns:
+      - name: id
+        data_type: STRING
+        description: "Subscription Id"
+      - name: customer_id
+        data_type: STRING
+        description: "Subscriber Id"
+      - name: car_id
+        data_type: STRING
+        description: "Car Id"
+      - name: created_at
+        data_type: DATETIME
+        description: "Time when subscription was created"
+      - name: start_date
+        data_type: DATETIME
+        description: "Time when subscription starts being active"
+      - name: term_month
+        data_type: STRING
+        description: "Subscription type 6/12 months"
+      - name: monthly_rate
+        data_type: FLOAT
+        description: "Payments per month"
+      - name: hash
+        data_type: STRING
+        description: "Hash diff to validate uniqueness"
+        tests:
+          - unique

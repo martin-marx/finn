@@ -6,6 +6,7 @@ SELECT
   id,
   vin,
   brand,
+  model,
   engine_type
 FROM
   {{ source('auto_sources','cars') }}

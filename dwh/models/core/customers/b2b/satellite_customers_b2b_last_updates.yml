@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: satellite_customers_b2b_last_updates
+    columns:
+      - name: id
+        data_type: STRING
+        description: "Customer Id"
+        tests:
+          - unique
+      - name: company_name
+        data_type: STRING
+        description: "Company name (B2B)"
+      - name: city
+        data_type: STRING
+        description: "Customer address"
+      - name: zip
+        data_type: STRING
+        description: "Customer zip"
+      - name: street
+        data_type: STRING
+        description: "Customer street"
+      - name: street_house
+        data_type: STRING
+        description: "Customer street house"

@@ -1,6 +1,6 @@
 [default]
 url = "http://localhost:8000/"
-db_url = "sqlite:///./test.db"
+db_url = "sqlite:///../dwh/dwh.db"
 date_format = '%Y-%m-%dT%H:%M:%S.%f'
 
 [subscriptions]

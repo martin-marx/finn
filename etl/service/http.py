@@ -5,6 +5,7 @@ from time import sleep
 
 import requests
 import logging
+import sys
 
 
 def fetch_data(url):
@@ -21,7 +22,7 @@ def fetch_data(url):
                 return response.json()
             elif 400 <= response.status_code < 500:
                 logging.error(f"Client error: {response.status_code}")
-                raise Exception()
+                sys.exit()
             elif 500 <= response.status_code:
                 warning(f"Server error: {response.status_code}")
                 if attempt <= retries - 1:
@@ -31,10 +32,10 @@ def fetch_data(url):
                     continue
                 else:
                     logging.error(f"The job failed due to the external server issues after {retries} retries")
-                    raise Exception()
+                    sys.exit()
             else:
                 warning(f"Unexpected error: {response.status_code}")
-                break
+                sys.exit()
         except Timeout:
             warning("Request timed out.")
             if attempt <= retries - 1:
@@ -44,7 +45,7 @@ def fetch_data(url):
                 continue
             else:
                 logging.error(f"The job failed due to timeout after {retries} retries")
-                raise Exception()
+                sys.exit()
         except Exception as e:
-            warning(f"Unexpected error occurred: {str(e)}")
-            raise e
+            logging.error(f"Unexpected error occurred: {str(e)}")
+            sys.exit()

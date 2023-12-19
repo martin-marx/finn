@@ -64,5 +64,6 @@ if __name__ == '__main__':
     logging.info("Fetched data")
     converted_result = __convert_entity(job_name, json_result)
     filter_converted_result = [element for element in converted_result if element.id is not None]
+    logging.info("Inserting data")
     insert_data(filter_converted_result)
     logging.info("The data has been inserted. Shutting down the job")

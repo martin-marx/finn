@@ -11,4 +11,6 @@ prof:
       schema_directory: '.'
       #optional fields
       extensions:
-        - "crypto.dylib"
+        - "crypto.dylib" #mac
+#        - "crypto.dll"  #windows
+#        - "crypto.so"   #linux

@@ -40,8 +40,8 @@ prepared_subscriptions AS (
 SELECT
   m.month AS month,
   ps.brand AS brand,
-  SUM(IIF(ps.tp = 'B2B', 1, 0) * 1.0) / COUNT(*) AS B2B_share,
-  SUM(IIF(ps.tp = 'B2C', 1, 0) * 1.0) / COUNT(*) AS B2C_share
+  SUM(IIF(ps.tp = 'B2B', 1, 0) * 1.0) / COUNT(*) AS b2b_share,
+  SUM(IIF(ps.tp = 'B2C', 1, 0) * 1.0) / COUNT(*) AS b2c_share
 FROM
   dates m JOIN prepared_subscriptions ps ON m.month BETWEEN ps.start_date AND ps.end_date
 GROUP BY

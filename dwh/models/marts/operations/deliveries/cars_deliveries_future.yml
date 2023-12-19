@@ -2,3 +2,14 @@ version: 2
 
 models:
   - name: cars_deliveries_future
+    description: "Number of delivered cars per city and per date for the future dates"
+    columns:
+      - name: deliveries_number
+        data_type: INT
+        description: "Number of deliveries"
+      - name: city
+        data_type: VARCHAR
+        description: "City of delivery"
+      - name: delivery_date
+        data_type: DATE
+        description: "Date of delivery"

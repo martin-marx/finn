@@ -4,13 +4,13 @@ models:
   - name: link_subscriptions
     columns:
       - name: id
-        data_type: STRING
+        data_type: VARCHAR
         description: "Subscription Id"
       - name: customer_id
-        data_type: STRING
+        data_type: VARCHAR
         description: "Subscriber Id"
       - name: car_id
-        data_type: STRING
+        data_type: VARCHAR
         description: "Car Id"
       - name: created_at
         data_type: DATETIME
@@ -19,13 +19,13 @@ models:
         data_type: DATETIME
         description: "Time when subscription starts being active"
       - name: term_month
-        data_type: STRING
+        data_type: VARCHAR
         description: "Subscription type 6/12 months"
       - name: monthly_rate
         data_type: FLOAT
         description: "Payments per month"
       - name: hash
-        data_type: STRING
+        data_type: VARCHAR
         description: "Hash diff to validate uniqueness"
         tests:
           - unique

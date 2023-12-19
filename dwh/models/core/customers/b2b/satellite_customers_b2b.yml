@@ -4,25 +4,25 @@ models:
   - name: satellite_customers_b2b
     columns:
       - name: id
-        data_type: STRING
+        data_type: VARCHAR
         description: "Customer Id"
       - name: company_name
-        data_type: STRING
+        data_type: VARCHAR
         description: "Company name (B2B)"
       - name: city
-        data_type: STRING
+        data_type: VARCHAR
         description: "Customer address"
       - name: zip
-        data_type: STRING
+        data_type: VARCHAR
         description: "Customer zip"
       - name: street
-        data_type: STRING
+        data_type: VARCHAR
         description: "Customer street"
       - name: street_house
-        data_type: STRING
+        data_type: INT
         description: "Customer street house"
       - name: hash
-        data_type: STRING
+        data_type: VARCHAR
         description: "Hash diff to validate uniqueness"
         tests:
           - unique

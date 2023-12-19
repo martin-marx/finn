@@ -2,3 +2,11 @@ version: 2
 
 models:
   - name: defleeted_cars_volumes_historical
+    description: "Number of cars defleeted per day for the past dates"
+    columns:
+      - name: cnt
+        data_type: INT
+        description: "Number of defleeted cars"
+      - name: day
+        data_type: DATE
+        description: "Date of defleetion"

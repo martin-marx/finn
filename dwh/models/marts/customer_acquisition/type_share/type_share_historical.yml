@@ -2,3 +2,17 @@ version: 2
 
 models:
   - name: type_share_historical
+    description: "Active subscription type (B2B vs B2C) share per brand for the past months"
+    columns:
+      - name: month
+        data_type: DATE
+        description: "First day of the month which the data is calculated for"
+      - name: brand
+        data_type: VARCHAR
+        description: "Car brand"
+      - name: b2b_share
+        data_type: REAL
+        description: "B2B share"
+      - name: b2c_share
+        data_type: REAL
+        description: "B2C share"

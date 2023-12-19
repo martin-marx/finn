@@ -2,3 +2,14 @@ version: 2
 
 models:
   - name: type_distribution
+    description: "Number of customers per term and type (B2B/B2C) for all time"
+    columns:
+      - name: b2b_distribution
+        data_type: INT
+        description: "Number B2B of customers"
+      - name: b2c_distribution
+        data_type: INT
+        description: "Number B2C of customers"
+      - name: term
+        data_type: VARCHAR
+        description: "Time term (6/12 months)"

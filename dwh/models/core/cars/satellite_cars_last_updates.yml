@@ -4,12 +4,12 @@ models:
   - name: satellite_cars_last_updates
     columns:
       - name: id
-        data_type: STRING
+        data_type: VARCHAR
         description: "Car Id"
         tests:
           - unique
       - name: license_plate
-        data_type: STRING
+        data_type: VARCHAR
         description: "Car license plate"
       - name: registration_date
         data_type: DATETIME
@@ -21,7 +21,7 @@ models:
         data_type: DATE
         description: "Date when the data was processed"
       - name: hash
-        data_type: STRING
+        data_type: VARCHAR
         description: "Hash diff to validate uniqueness"
       - name: updated_at
         data_type: DATETIME

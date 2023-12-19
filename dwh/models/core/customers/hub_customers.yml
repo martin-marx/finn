@@ -4,7 +4,7 @@ models:
   - name: hub_customers
     columns:
       - name: id
-        data_type: STRING
+        data_type: VARCHAR
         description: "Subscription Id"
         tests:
           - unique

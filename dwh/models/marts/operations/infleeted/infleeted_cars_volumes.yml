@@ -2,3 +2,11 @@ version: 2
 
 models:
   - name: infleeted_cars_volumes
+    description: "Number of cars infleeted per day for the whole time"
+    columns:
+      - name: cnt
+        data_type: INT
+        description: "Number of infleeted cars"
+      - name: day
+        data_type: DATE
+        description: "Date of infleetion"

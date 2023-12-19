@@ -4,21 +4,21 @@ models:
   - name: hub_cars
     columns:
       - name: id
-        data_type: STRING
+        data_type: VARCHAR
         description: "Car Id"
         tests:
           - unique
       - name: vin
-        data_type: STRING
+        data_type: VARCHAR
         description: "VIN"
         tests:
           - unique
       - name: brand
-        data_type: STRING
+        data_type: VARCHAR
         description: "Car brand"
       - name: model
-        data_type: STRING
+        data_type: VARCHAR
         description: "Car model"
       - name: engine_type
-        data_type: STRING
+        data_type: VARCHAR
         description: "Car engine type"

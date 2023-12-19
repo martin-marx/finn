@@ -9,15 +9,6 @@ sources:
     tables:
 
       - name: subscriptions
-#        freshness:
-#          warn_after:
-#            count: 1
-#            period: day
-#          error_after:
-#            count: 2
-#            period: days
-#          filter: DATE_DIFF(CURRENT_TIMESTAMP(), TIMESTAMP_MILLIS(processing_date), DAY) < 1
-#        loaded_at_field: "TIMESTAMP_MILLIS(created_at)"
         columns:
           - name: id
             data_type: STRING

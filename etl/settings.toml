@@ -1,7 +1,14 @@
 [default]
 url = "http://localhost:8000/"
+request_timeout_seconds = 30
+request_retries = 5
+request_sleep_time = 5
+request_sleep_multiplicator = 1.3
+
 db_url = "sqlite:///../dwh/dwh.db"
+
 date_format = '%Y-%m-%dT%H:%M:%S.%f'
+
 
 [subscriptions]
 route = 'subscriptions'

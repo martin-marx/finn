@@ -1,4 +1,5 @@
-from dao import insert_data
+from db.dao import insert_data
+from service.http import fetch_data
 from jobs import Jobs
 from model import Car, Customer, Subscription
 from dynaconf import settings
@@ -6,16 +7,9 @@ from datetime import datetime
 
 import sys
 import logging
-import requests
 
 date_format = settings.from_env('default').DATE_FORMAT
-
-
-def __fetch_date(url):
-    response = requests.get(url)
-    json_result = response.json()
-    response.close()
-    return json_result
+logging.basicConfig(level=logging.INFO)
 
 
 def __convert_car(car):
@@ -57,7 +51,7 @@ def __convert_entity(job_name, entities):
         case Jobs.subscriptions.value:
             return [__convert_subscription(parsed_subscription) for parsed_subscription in entities]
         case _:
-            logging.error("Unknown job type has been started. Shut down the app")
+            logging.error("Unknown job type has been started. Shutting down the job")
             sys.exit()
 
 
@@ -66,9 +60,9 @@ if __name__ == '__main__':
     logging.info(f"Start import job {job_name}")
     url = f"{settings.from_env('default').URL}{settings.from_env(job_name).ROUTE}"
 
-    json_result = __fetch_date(url)
+    json_result = fetch_data(url)
     logging.info("Fetched data")
     converted_result = __convert_entity(job_name, json_result)
-    filter_converted_result = filter(lambda el: el.id is not None, converted_result)
+    filter_converted_result = [element for element in converted_result if element.id is not None]
     insert_data(filter_converted_result)
     logging.info("The data has been inserted. Shutting down the job")
